@@ -316,12 +316,20 @@ document.addEventListener('DOMContentLoaded', () => {
 
         // Normalize UVs for ShapeGeometry (which default to raw x, y coordinates in Three.js)
         const pos = frontGeometry.attributes.position;
-        const uvs = frontGeometry.attributes.uv;
-        if (pos && uvs) {
+        if (pos) {
+            let uvs = frontGeometry.attributes.uv;
+            if (!uvs) {
+                const uvArray = new Float32Array(pos.count * 2);
+                uvs = new THREE.BufferAttribute(uvArray, 2);
+                frontGeometry.setAttribute('uv', uvs);
+            }
+            const posArray = pos.array;
+            const uvArray = uvs.array;
             for (let i = 0; i < pos.count; i++) {
-                const u = (pos.getX(i) + cardWidth / 2) / cardWidth;
-                const v = (pos.getY(i) + cardHeight / 2) / cardHeight;
-                uvs.setXY(i, u, v);
+                const x = posArray[i * 3];
+                const y = posArray[i * 3 + 1];
+                uvArray[i * 2] = (x + cardWidth / 2) / cardWidth;
+                uvArray[i * 2 + 1] = (y + cardHeight / 2) / cardHeight;
             }
             uvs.needsUpdate = true;
         }
