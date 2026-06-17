@@ -313,6 +313,19 @@ document.addEventListener('DOMContentLoaded', () => {
             depth: cardThickness, bevelEnabled: false
         });
         const frontGeometry = new THREE.ShapeGeometry(cardShape);
+
+        // Normalize UVs for ShapeGeometry (which default to raw x, y coordinates in Three.js)
+        const pos = frontGeometry.attributes.position;
+        const uvs = frontGeometry.attributes.uv;
+        if (pos && uvs) {
+            for (let i = 0; i < pos.count; i++) {
+                const u = (pos.getX(i) + cardWidth / 2) / cardWidth;
+                const v = (pos.getY(i) + cardHeight / 2) / cardHeight;
+                uvs.setXY(i, u, v);
+            }
+            uvs.needsUpdate = true;
+        }
+
         const cardMeshes = [];
 
         const radius = 8.5;
