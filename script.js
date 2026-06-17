@@ -269,12 +269,19 @@ document.addEventListener('DOMContentLoaded', () => {
         const renderer = new THREE.WebGLRenderer({ canvas: canvas, alpha: true, antialias: true });
         renderer.setSize(container.clientWidth, container.clientHeight);
         renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+        renderer.outputEncoding = THREE.sRGBEncoding;
 
         carouselGroup = new THREE.Group();
         scene.add(carouselGroup);
 
         const textureLoader = new THREE.TextureLoader();
-        const textures = PORTFOLIO_CASES.map(c => textureLoader.load(c.image));
+        const textures = PORTFOLIO_CASES.map(c => {
+            const tex = textureLoader.load(c.image);
+            tex.encoding = THREE.sRGBEncoding;
+            tex.repeat.set(1, 5.2 / 8.0);
+            tex.offset.set(0, (1 - (5.2 / 8.0)) / 2);
+            return tex;
+        });
 
         const step = (Math.PI * 2) / totalSlides;
 
@@ -312,7 +319,12 @@ document.addEventListener('DOMContentLoaded', () => {
         for (let i = 0; i < totalSlides; i++) {
             const angle = (i / totalSlides) * Math.PI * 2;
             const frontMaterial = new THREE.MeshPhysicalMaterial({
-                color: 0x2d2d2d, map: textures[i], metalness: 0.15, roughness: 0.35, clearcoat: 0.6
+                color: 0xffffff,
+                map: textures[i],
+                metalness: 0.1,
+                roughness: 0.25,
+                clearcoat: 0.8,
+                clearcoatRoughness: 0.1
             });
 
             const cardContainer = new THREE.Group();
