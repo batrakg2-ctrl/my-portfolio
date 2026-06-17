@@ -1510,12 +1510,14 @@ a {
 
 /* Custom View Transitions: Slide Up from Bottom */
 ::view-transition-old(root) {
-    animation: 0.6s cubic-bezier(0.16, 1, 0.3, 1) both fadeOutPage;
+    animation: none;
+    mix-blend-mode: normal;
+    opacity: 1;
 }
 
 ::view-transition-new(root) {
     animation: 0.7s cubic-bezier(0.16, 1, 0.3, 1) both slideUpPage;
-    z-index: 2;
+    mix-blend-mode: normal;
 }
 
 @keyframes slideUpPage {
@@ -1527,20 +1529,17 @@ a {
     }
 }
 
-@keyframes fadeOutPage {
-    from {
-        opacity: 1;
-        transform: scale(0.96);
-    }
-    to {
-        opacity: 0.2; /* Kept slightly visible behind the sliding new page */
-        transform: scale(0.96);
-    }
-}
-
 /* Fallback entrance animation for browsers that do not support View Transitions (Safari, Firefox) */
 body {
     animation: entranceFadeIn 0.6s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+/* If native View Transitions are supported, completely disable the fallback body load animation
+   to prevent duplicate transitions and blinking at the end of navigation. */
+@supports (view-transition-name: none) {
+    body {
+        animation: none !important;
+    }
 }
 
 /* Disable body load animation when native View Transitions are running to prevent duplicate animations */
