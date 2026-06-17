@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ALEX.DESIGN | 3D & Brand Identity Portfolio</title>
+    <meta name="description" content="Портфолио Алекс - графический дизайн, 3D графика и разработка брендинга в стиле нео-брутализма.">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=Syne:wght@700;800&display=swap" rel="stylesheet">
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Custom Stylesheet -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Custom Cursor -->
+    <div class="custom-cursor"></div>
+    <div class="custom-cursor-follower"></div>
+
+    <!-- Floating Dock Navigation (Max Shirko Style) -->
+    <div class="dock-wrapper" id="dock-wrapper">
+        <!-- Dock Dropdown Menu -->
+        <div class="dock-dropdown" id="dock-dropdown">
+            <div class="dock-dropdown-grid">
+                <div class="dock-dropdown-col">
+                    <div class="dock-dropdown-label">НАВИГАЦИЯ</div>
+                    <a href="#portfolio" class="dock-dropdown-link">КЕЙСЫ</a>
+                    <a href="#about" class="dock-dropdown-link">ОБ АВТОРЕ</a>
+                    <a href="#contact" class="dock-dropdown-link">КОНТАКТЫ</a>
+                </div>
+                <div class="dock-dropdown-col">
+                    <div class="dock-dropdown-label">СВЯЗАТЬСЯ</div>
+                    <a href="https://t.me/username" target="_blank" class="dock-dropdown-link">TELEGRAM</a>
+                    <a href="mailto:alex@design.com" class="dock-dropdown-link">EMAIL</a>
+                </div>
+                <div class="dock-dropdown-col">
+                    <div class="dock-dropdown-label">СОЦСЕТИ</div>
+                    <a href="#" target="_blank" class="dock-dropdown-link">BEHANCE</a>
+                    <a href="#" target="_blank" class="dock-dropdown-link">DRIBBBLE</a>
+                    <a href="#" target="_blank" class="dock-dropdown-link">INSTAGRAM</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Dock Navigation Bar -->
+        <nav class="dock-nav" id="dock-nav">
+            <a href="#" class="dock-logo">
+                ALEX<span class="dot">.</span>DESIGN
+            </a>
+            <div class="dock-links">
+                <a href="#portfolio" class="dock-link">КЕЙСЫ</a>
+                <a href="#about" class="dock-link">О ОБ АВТОРЕ</a>
+                <a href="#contact" class="dock-link">КОНТАКТЫ</a>
+            </div>
+            <div class="dock-right-section">
+                <a href="#contact" class="dock-cta">СВЯЗАТЬСЯ <i class="fa-solid fa-bolt"></i></a>
+                <button class="dock-burger" id="dock-burger" aria-label="Открыть меню">
+                    <span class="dock-burger-line"></span>
+                    <span class="dock-burger-line"></span>
+                    <span class="dock-burger-line"></span>
+                </button>
+            </div>
+        </nav>
+    </div>
+
+    <!-- Hero Section (Apechain Style 3D Carousel) -->
+    <section class="hero">
+        <!-- Three.js Canvas Container -->
+        <div class="hero-canvas-container">
+            <canvas id="hero-canvas"></canvas>
+        </div>
+        
+        <div class="hero-content" id="hero-content-slider">
+            <div class="hero-slides-wrapper">
+                <!-- Slide 1: 3D Art -->
+                <div class="hero-slide active" data-index="0">
+                    <div class="tagline">CASE STUDY #1 / 3D ART</div>
+                    <h1 class="hero-title">
+                        CHROMATIC<br>
+                        <span class="highlight" data-text="VOID">VOID</span>
+                    </h1>
+                    <p class="hero-desc">
+                        Экспериментальное 3D-исследование жидкого хрома, преломления света и органических форм в Blender.
+                    </p>
+                </div>
+                
+                <!-- Slide 2: Branding -->
+                <div class="hero-slide" data-index="1">
+                    <div class="tagline">CASE STUDY #2 / BRANDING</div>
+                    <h1 class="hero-title">
+                        KRYPTON<br>
+                        <span class="highlight" data-text="SECURITY">SECURITY</span>
+                    </h1>
+                    <p class="hero-desc">
+                        Фирменный стиль, неоновая айдентика и концепт упаковочных решений для высокотехнологичного ИТ-стартапа.
+                    </p>
+                </div>
+
+                <!-- Slide 3: Graphic Design -->
+                <div class="hero-slide" data-index="2">
+                    <div class="tagline">CASE STUDY #3 / GRAPHICS</div>
+                    <h1 class="hero-title">
+                        CYBER TYPO<br>
+                        <span class="highlight" data-text="POSTER">POSTER</span>
+                    </h1>
+                    <p class="hero-desc">
+                        Экспериментальный плакат в стиле нео-брутализма с акцентом на жесткую сетку и агрессивную японскую типографику.
+                    </p>
+                </div>
+
+                <!-- Slide 4: Solar Flare (3D Art) -->
+                <div class="hero-slide" data-index="3">
+                    <div class="tagline">CASE STUDY #4 / 3D ART</div>
+                    <h1 class="hero-title">
+                        SOLAR<br>
+                        <span class="highlight" data-text="FLARE">FLARE</span>
+                    </h1>
+                    <p class="hero-desc">
+                        Концептуальная 3D-визуализация плазменных потоков и преломления света в фотореалистичной среде.
+                    </p>
+                </div>
+
+                <!-- Slide 5: Neo Gastro (Branding) -->
+                <div class="hero-slide" data-index="4">
+                    <div class="tagline">CASE STUDY #5 / BRANDING</div>
+                    <h1 class="hero-title">
+                        NEO<br>
+                        <span class="highlight" data-text="GASTRO">GASTRO</span>
+                    </h1>
+                    <p class="hero-desc">
+                        Экологичная айдентика, минималистичный дизайн меню и упаковки здорового стрит-фуда будущего.
+                    </p>
+                </div>
+
+                <!-- Slide 6: Sonic Wave (Graphics) -->
+                <div class="hero-slide" data-index="5">
+                    <div class="tagline">CASE STUDY #6 / GRAPHICS</div>
+                    <h1 class="hero-title">
+                        SONIC<br>
+                        <span class="highlight" data-text="WAVE">WAVE</span>
+                    </h1>
+                    <p class="hero-desc">
+                        Экспериментальная серия плакатов для фестиваля электронной музыки на основе дисторшн-текстур.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Static Buttons (never jump) -->
+        <div class="hero-actions">
+            <div class="hero-arrows">
+                <button class="brut-btn btn-secondary prev-slide-btn" aria-label="Предыдущий слайд"><i class="fa-solid fa-arrow-left"></i></button>
+                <button class="brut-btn btn-secondary next-slide-btn" aria-label="Следующий слайд"><i class="fa-solid fa-arrow-right"></i></button>
+            </div>
+            <button class="brut-btn btn-primary view-case-btn" id="hero-view-case-btn">СМОТРЕТЬ КЕЙС <i class="fa-solid fa-arrow-up-right-from-square"></i></button>
+        </div>
+
+        <!-- Thumbnail Navigation Dock (Apechain Style) -->
+        <div class="hero-thumbnails-container">
+            <div class="hero-thumbnail active" data-index="0">
+                <img src="assets/case_3d.png" alt="Chromatic Void Thumbnail">
+                <span class="thumb-progress"><span class="thumb-progress-bar"></span></span>
+            </div>
+            <div class="hero-thumbnail" data-index="1">
+                <img src="assets/case_branding.png" alt="Krypton Security Thumbnail">
+                <span class="thumb-progress"><span class="thumb-progress-bar"></span></span>
+            </div>
+            <div class="hero-thumbnail" data-index="2">
+                <img src="assets/case_graphic.png" alt="Cyber Typo Poster Thumbnail">
+                <span class="thumb-progress"><span class="thumb-progress-bar"></span></span>
+            </div>
+            <div class="hero-thumbnail" data-index="3">
+                <img src="assets/case_3d.png" alt="Solar Flare Thumbnail">
+                <span class="thumb-progress"><span class="thumb-progress-bar"></span></span>
+            </div>
+            <div class="hero-thumbnail" data-index="4">
+                <img src="assets/case_branding.png" alt="Neo Gastro Thumbnail">
+                <span class="thumb-progress"><span class="thumb-progress-bar"></span></span>
+            </div>
+            <div class="hero-thumbnail" data-index="5">
+                <img src="assets/case_graphic.png" alt="Sonic Wave Thumbnail">
+                <span class="thumb-progress"><span class="thumb-progress-bar"></span></span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Marquee Banner -->
+    <div class="marquee-container">
+        <div class="marquee-inner">
+            <span>3D DESIGN <i class="fa-solid fa-star-of-life"></i> BRAND IDENTITY <i class="fa-solid fa-star-of-life"></i> ART DIRECTION <i class="fa-solid fa-star-of-life"></i> GRAPHIC EXPERIMENTS <i class="fa-solid fa-star-of-life"></i> VISUAL CONCEPTS <i class="fa-solid fa-star-of-life"></i></span>
+            <span>3D DESIGN <i class="fa-solid fa-star-of-life"></i> BRAND IDENTITY <i class="fa-solid fa-star-of-life"></i> ART DIRECTION <i class="fa-solid fa-star-of-life"></i> GRAPHIC EXPERIMENTS <i class="fa-solid fa-star-of-life"></i> VISUAL CONCEPTS <i class="fa-solid fa-star-of-life"></i></span>
+        </div>
+    </div>
+
+    <!-- Portfolio Section -->
+    <section id="portfolio" class="portfolio-section">
+        <div class="section-header">
+            <h2 class="section-title">МОИ КЕЙСЫ</h2>
+            <!-- Category Filters -->
+            <div class="filters">
+                <button class="filter-btn active" data-filter="all">ВСЕ</button>
+                <button class="filter-btn" data-filter="3d">3D ГРАФИКА</button>
+                <button class="filter-btn" data-filter="branding">БРЕНДИНГ</button>
+                <button class="filter-btn" data-filter="graphic">ГРАФИКА</button>
+            </div>
+        </div>
+
+        <!-- Cases Grid -->
+        <div class="cases-grid">
+            <!-- Card 1: 3D -->
+            <div class="case-card" data-category="3d" data-title="Хромированный Абстракционизм" data-desc="Интерактивный 3D-арт проект, исследующий преломление света в футуристических жидких материалах." data-full-desc="Этот проект представляет собой серию абстрактных трехмерных скульптур, созданных для цифровой галереи. В работе использовались продвинутые шейдеры стекла и жидкого металла в Blender. Итоговые рендеры сочетают в себе глянцевый хром, переливающийся цвет и глубокие тени, передавая атмосферу цифрового футуризма." data-image="assets/case_3d.png" data-tags="Blender, 3D Art, Lighting" data-year="2026" data-client="Цифровая Галерея 'Void'">
+                <div class="case-image-wrapper">
+                    <img src="assets/case_3d.png" alt="3D Chrome Sculpture" class="case-image">
+                    <span class="case-badge">3D ART</span>
+                </div>
+                <div class="case-info">
+                    <div class="case-meta">2026 / ЛИЧНЫЙ ПРОЕКТ</div>
+                    <h3 class="case-title">CHROMATIC VOID</h3>
+                    <p class="case-preview">Экспериментальное 3D-исследование жидкого хрома и преломления света.</p>
+                    <div class="case-footer">
+                        <span class="case-action">СМОТРЕТЬ КЕЙС <i class="fa-solid fa-arrow-up-right-from-square"></i></span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 2: Branding -->
+            <div class="case-card" data-category="branding" data-title="Krypton Identity" data-desc="Разработка логотипа, фирменного стиля и премиальной упаковки для технологического стартапа в сфере кибербезопасности." data-full-desc="Krypton обратился к нам за ребрендингом, чтобы заявить о себе как о современном и надежном щите данных. Мы разработали айдентику, построенную на геометрии защитных блоков и агрессивном неоново-зеленом цвете. Фирменный стиль включает разработку упаковки, мерча, визиток, веб-интерфейсов и гайдлайна бренда." data-image="assets/case_branding.png" data-tags="Branding, Logo, Packaging" data-year="2025" data-client="Krypton Security">
+                <div class="case-image-wrapper">
+                    <img src="assets/case_branding.png" alt="Krypton Branding mockup" class="case-image">
+                    <span class="case-badge">БРЕНДИНГ</span>
+                </div>
+                <div class="case-info">
+                    <div class="case-meta">2025 / KRYPTON SECURITY</div>
+                    <h3 class="case-title">KRYPTON BRANDING</h3>
+                    <p class="case-preview">Фирменный стиль и упаковка для футуристичного ИТ-стартапа.</p>
+                    <div class="case-footer">
+                        <span class="case-action">СМОТРЕТЬ КЕЙС <i class="fa-solid fa-arrow-up-right-from-square"></i></span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 3: Graphic Design -->
+            <div class="case-card" data-category="graphic" data-title="Cyber-Punk Poster" data-desc="Экспериментальный дизайн постера, совмещающий жесткие сетки и хаотичную типографику." data-full-desc="Дизайн этого постера вдохновлен эстетикой японского киберпанка и нео-брутализма. Проект строится на контрасте тяжелых шрифтов, технических схем и ярких оранжевых элементов. Работа демонстрирует владение композицией, балансом хаоса и структуры, а также сложной типографикой в графическом дизайне." data-image="assets/case_graphic.png" data-tags="Typography, Layout, Print" data-year="2025" data-client="Выставка Токио 2025">
+                <div class="case-image-wrapper">
+                    <img src="assets/case_graphic.png" alt="Neo-brutalist poster" class="case-image">
+                    <span class="case-badge">ГРАФИКА</span>
+                </div>
+                <div class="case-info">
+                    <div class="case-meta">2025 / ВЫСТАВОЧНЫЙ СТЕНД</div>
+                    <h3 class="case-title">CYBER TYPO POSTER</h3>
+                    <p class="case-preview">Постер в стиле нео-брутализма с упором на жесткую модульную сетку.</p>
+                    <div class="case-footer">
+                        <span class="case-action">СМОТРЕТЬ КЕЙС <i class="fa-solid fa-arrow-up-right-from-square"></i></span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 4: 3D -->
+            <div class="case-card" data-category="3d" data-title="Solar Flare" data-desc="Концептуальная 3D-визуализация плазменных потоков и преломления света в фотореалистичной среде." data-full-desc="Этот проект исследует динамику плазмы и частиц в закрытом пространстве с использованием продвинутых физических симуляций Blender. Особое внимание было уделено сложным материалам свечения, анизотропным отражениям и преломлению лучей сквозь хромированные стеклянные линзы." data-image="assets/case_3d.png" data-tags="Blender, Physics, Particles" data-year="2026" data-client="Космический Музей 'Cosmos'">
+                <div class="case-image-wrapper">
+                    <img src="assets/case_3d.png" alt="Solar Flare 3D rendering" class="case-image">
+                    <span class="case-badge">3D ART</span>
+                </div>
+                <div class="case-info">
+                    <div class="case-meta">2026 / КОСМИЧЕСКИЙ МУЗЕЙ 'COSMOS'</div>
+                    <h3 class="case-title">SOLAR FLARE</h3>
+                    <p class="case-preview">Экспериментальное 3D-моделирование плазмы и светопреломлений.</p>
+                    <div class="case-footer">
+                        <span class="case-action">СМОТРЕТЬ КЕЙС <i class="fa-solid fa-arrow-up-right-from-square"></i></span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 5: Branding -->
+            <div class="case-card" data-category="branding" data-title="Neo Gastro" data-desc="Разработка логотипа, экологичной упаковки и айдентики для современной сети быстрого питания." data-full-desc="Мы разработали полную линейку упаковки из переработанных материалов, контрастный шрифт для меню и фирменный мерч. Наш дизайн-концепт для Neo Gastro строится на простых геометрических формах и экологичной цветовой гамме, подчеркивающих экологическую чистоту бренда." data-image="assets/case_branding.png" data-tags="Branding, Identity, Figma" data-year="2025" data-client="NeoGastro Group">
+                <div class="case-image-wrapper">
+                    <img src="assets/case_branding.png" alt="Neo Gastro packaging mockup" class="case-image">
+                    <span class="case-badge">БРЕНДИНГ</span>
+                </div>
+                <div class="case-info">
+                    <div class="case-meta">2025 / NEOGASTRO GROUP</div>
+                    <h3 class="case-title">NEO GASTRO</h3>
+                    <p class="case-preview">Экологичная упаковка и минималистичный стиль для фаст-фуда нового поколения.</p>
+                    <div class="case-footer">
+                        <span class="case-action">СМОТРЕТЬ КЕЙС <i class="fa-solid fa-arrow-up-right-from-square"></i></span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 6: Graphic Design -->
+            <div class="case-card" data-category="graphic" data-title="Sonic Wave Posters" data-desc="Серия бруталистских афиш для фестиваля экспериментального звука на основе дисторшн-текстур." data-full-desc="Эта серия плакатов выражает визуальную динамику электронной музыки через тяжелую модульную сетку, шумные дисторшн-текстуры и рваную брутальную типографику. Каждый постер представляет собой законченный графический эксперимент со звуковой волной, наложенной на монохромный макет." data-image="assets/case_graphic.png" data-tags="Poster Design, Print, Photoshop" data-year="2025" data-client="Fest 'Sonic Wave'">
+                <div class="case-image-wrapper">
+                    <img src="assets/case_graphic.png" alt="Sonic Wave Brutalist Poster" class="case-image">
+                    <span class="case-badge">ГРАФИКА</span>
+                </div>
+                <div class="case-info">
+                    <div class="case-meta">2025 / FEST 'SONIC WAVE'</div>
+                    <h3 class="case-title">SONIC WAVE</h3>
+                    <p class="case-preview">Серия бруталистских афиш с рваной типографикой для музыкального фестиваля.</p>
+                    <div class="case-footer">
+                        <span class="case-action">СМОТРЕТЬ КЕЙС <i class="fa-solid fa-arrow-up-right-from-square"></i></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about-section">
+        <div class="about-grid">
+            <div class="about-info-panel">
+                <h2 class="about-title">КТО Я ТАКОЙ?</h2>
+                <div class="about-text">
+                    <p>Привет! Меня зовут Алекс. Я графический дизайнер с фокусом на трехмерную графику и разработку сильной визуальной идентичности (брендинга).</p>
+                    <p>Мой подход сочетает в себе эстетику нео-брутализма — чистую структуру, крупные шрифты, яркие акценты — и современные 3D-технологии. Я помогаю брендам выглядеть смело и запоминаться с первого взгляда.</p>
+                </div>
+                
+                <div class="skills-box">
+                    <h4 class="skills-title">СТЕК ТЕХНОЛОГИЙ & НАВЫКИ:</h4>
+                    <div class="skills-tags">
+                        <span class="skill-tag">3D BLENDER</span>
+                        <span class="skill-tag">CINEMA 4D</span>
+                        <span class="skill-tag">BRAND IDENTITY</span>
+                        <span class="skill-tag">ADOBE ILLUSTRATOR</span>
+                        <span class="skill-tag">ADOBE PHOTOSHOP</span>
+                        <span class="skill-tag">FIGMA</span>
+                        <span class="skill-tag">THREE.JS</span>
+                        <span class="skill-tag">POSTER DESIGN</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="about-stats-panel">
+                <div class="stat-card">
+                    <div class="stat-num">5+</div>
+                    <div class="stat-label">ЛЕТ В ДИЗАЙНЕ</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-num">40+</div>
+                    <div class="stat-label">УСПЕШНЫХ КЕЙСОВ</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-num">100%</div>
+                    <div class="stat-label">ОТДАЧА ПРОЕКТАМ</div>
+                </div>
+                <div class="stat-card accent-card">
+                    <div class="stat-text">ГОТОВ К НОВЫМ ВЫЗОВАМ</div>
+                    <div class="stat-arrow"><i class="fa-solid fa-arrow-trend-up"></i></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact-section">
+        <div class="contact-container">
+            <div class="contact-text-side">
+                <h2 class="contact-title">ОБСУДИМ<br>ПРОЕКТ?</h2>
+                <p class="contact-desc">Если тебе нужен смелый дизайн, стильное 3D или запоминающийся бренд — напиши мне, и мы создадим что-то невероятное вместе.</p>
+                <div class="contact-socials">
+                    <a href="#" class="social-link" aria-label="Telegram"><i class="fa-brands fa-telegram"></i></a>
+                    <a href="#" class="social-link" aria-label="Behance"><i class="fa-brands fa-behance"></i></a>
+                    <a href="#" class="social-link" aria-label="Dribbble"><i class="fa-brands fa-dribbble"></i></a>
+                    <a href="#" class="social-link" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                </div>
+            </div>
+            
+            <div class="contact-form-side">
+                <form id="contact-form" class="brutalist-form">
+                    <div class="form-group">
+                        <label for="form-name">ТВОЕ ИМЯ</label>
+                        <input type="text" id="form-name" required placeholder="Иван Иванов">
+                    </div>
+                    <div class="form-group">
+                        <label for="form-email">EMAIL ДЛЯ СВЯЗИ</label>
+                        <input type="email" id="form-email" required placeholder="example@mail.com">
+                    </div>
+                    <div class="form-group">
+                        <label for="form-message">ОПИСАНИЕ ЗАДАЧИ</label>
+                        <textarea id="form-message" rows="4" required placeholder="Расскажи коротко о своем проекте..."></textarea>
+                    </div>
+                    <button type="submit" class="form-submit-btn">ОТПРАВИТЬ ЗАЯВКУ <i class="fa-solid fa-paper-plane"></i></button>
+                    <div class="form-success-msg">
+                        <i class="fa-solid fa-circle-check"></i> Сообщение отправлено! Я свяжусь с тобой в ближайшее время.
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-bottom">
+            <div>© 2026 ALEX.DESIGN. ВСЕ ПРАВА ЗАЩИЩЕНЫ.</div>
+            <div class="footer-tag">MADE WITH <i class="fa-solid fa-heart accent-text"></i> AND CODE</div>
+        </div>
+    </footer>
+
+    <!-- Case Details Modal Removed (Subpages used instead) -->
+
+    <!-- Three.js Library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <!-- Custom JavaScript -->
+    <script src="script.js"></script>
+</body>
+</html>
